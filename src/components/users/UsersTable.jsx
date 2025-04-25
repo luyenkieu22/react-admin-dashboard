@@ -89,13 +89,19 @@ const UsersTable = () => {
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <td className="px-6 py-4 whitespace-nowrap text-xs font-medium text-gray-300 flex items-center gap-2">
-                                    <img
-                                        className="size-10"
-                                        src="https://images.unsplash.com/photo-1627820751059-43001b92c076?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2lyZWxlc3N8ZW58MHx8MHx8fDA%3D"
-                                        alt="User img"
-                                    />
-                                    {user.name}
+                                <td className="px-6 py-4 whitespace-nowrap">
+                                    <div className="flex items-center">
+                                        <div className="flex-shrink-0 h-10 w-10">
+                                            <div className="h-10 w-10 rounded-full bg-gradient-to-r from-purple-400 to-blue-500 flex items-center justify-center text-white font-semibold">
+                                                {user.name.charAt(0)}
+                                            </div>
+                                        </div>
+                                        <div className="ml-4">
+                                            <div className="text-xs font-medium text-gray-100">
+                                                {user.name}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                                     {user.email}
@@ -125,16 +131,16 @@ const UsersTable = () => {
                                 </td>
                             </motion.tr>
                         ))}
-                        {/* {usersList.length === 0 && (
+                        {usersList.length === 0 && (
                             <tr>
                                 <td
                                     colSpan="6"
                                     className="px-6 py-3 text-center text-xs font-medium text-gray-400 uppercase tracking-wider"
                                 >
-                                    No products found
+                                    No users found
                                 </td>
                             </tr>
-                        )} */}
+                        )}
                     </tbody>
                 </table>
             </div>
